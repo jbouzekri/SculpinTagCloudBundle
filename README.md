@@ -47,6 +47,12 @@ In a template, you can now call the following twig function :
 
 It will generate the html tag cloud.
 
+You can specify a custom template :
+
+``` twig
+{{ tag_cloud('my_template.html') }}
+```
+
 Configuration
 -------------
 
