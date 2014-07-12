@@ -1,0 +1,6 @@
+{% for tag in tag_cloud %}
+    <span class="tag size{{ tag.weight }}">{{ tag.tag }}</span>
+    {% if not loop.last %}
+        &nbsp;
+    {% endif %}
+{% endfor %}

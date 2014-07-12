@@ -1,0 +1,12 @@
+{
+    "name": "jbouzekri/sculpin-tag-cloud-bundle",
+    "type": "sculpin-bundle",
+    "description": "Generate tag cloud in Sculpin",
+    "keywords": ["sculpin", "php", "Bundle", "Tag", "cloud"],
+    "homepage": "https://github.com/jbouzekri/SculpinTagCloudBundle",
+    "license": "MIT",
+    "autoload": {
+        "psr-0": { "Jb\\Bundle\\TagCloudBundle": "" }
+    },
+    "target-dir": "Jb/Bundle/TagCloudBundle"
+}

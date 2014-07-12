@@ -1,0 +1,32 @@
+parameters:
+    jb_sculpin.tag_cloud.class: Jb\Bundle\TagCloudBundle\Component\Manager\TagCloudManager
+    jb_sculpin.tag_could_twig_function.class: Jb\Bundle\TagCloudBundle\Component\Renderer\TwigRenderer
+    jb_sculpin.tag_cloud.strategy.shuffle.class: Jb\Bundle\TagCloudBundle\Component\Strategy\ShuffleStrategy
+    jb_sculpin.tag_cloud.strategy.percent_size.class: Jb\Bundle\TagCloudBundle\Component\Strategy\PercentSizeStrategy
+    jb_sculpin.tag_cloud.factory.class: Jb\Bundle\TagCloudBundle\Component\Factory\TagCloudFactory
+
+services:
+    jb_sculpin.tag_cloud.manager:
+        class: %jb_sculpin.tag_cloud.class%
+        arguments:
+            - @sculpin_content_types.types.posts.tags_data_provider
+            - @jb_sculpin.tag_cloud.factory
+
+    jb_sculpin.tag_cloud.factory:
+        class: %jb_sculpin.tag_cloud.factory.class%
+        arguments:
+            - %jb_sculpin.tag_cloud.tag_cloud_entity.class%
+            - %jb_sculpin.tag_cloud.tag_entity.class%
+
+    jb_sculpin.tag_could_twig_function:
+        class: %jb_sculpin.tag_could_twig_function.class%
+        arguments:
+            - @jb_sculpin.tag_cloud.manager
+        tags:
+            - { name: twig.extension }
+
+    jb_sculpin.tag_cloud.strategy.shuffle:
+        class: %jb_sculpin.tag_cloud.strategy.shuffle.class%
+
+    jb_sculpin.tag_cloud.strategy.percent_size:
+        class: %jb_sculpin.tag_cloud.strategy.percent_size.class%
