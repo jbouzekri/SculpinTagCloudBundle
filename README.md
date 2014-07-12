@@ -32,7 +32,7 @@ class SculpinKernel extends \Sculpin\Bundle\SculpinBundle\HttpKernel\AbstractKer
 }
 ```
 
-Then you need to add the tag cloud template and its stylesheets to your project *
+Then you need to add the tag cloud template and its stylesheets to your project
 * Copy the Resources/views/tag_cloud.html file in the _includes folder of your source
 * Copy the Resources/public/css/tag_cloud.css file in the css folder of your source (or you can directly add its content in your project stylesheets).
 
@@ -65,9 +65,9 @@ jb_tag_cloud:
         - jb_sculpin.tag_cloud.strategy.percent_size
 ```
 
-jb_tag_cloud.tag_entity : the tag entity
-jb_tag_cloud.tag_cloud_entity : the tag cloud entity
-jb_tag_cloud.strategies : A list of services to manipulate the tag cloud. By default, shuffle randomize the order of the tags and percent_size calculate the tag weight based on its number of apparition.
+* jb_tag_cloud.tag_entity : the tag entity
+* jb_tag_cloud.tag_cloud_entity : the tag cloud entity
+* jb_tag_cloud.strategies : A list of services to manipulate the tag cloud. By default, shuffle randomize the order of the tags and percent_size calculate the tag weight based on its number of apparition.
 
 License
 -------
