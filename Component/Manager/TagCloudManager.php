@@ -54,12 +54,6 @@ class TagCloudManager
 
         $tags = $this->tagDataProvider->provideData();
         foreach ($tags as $tag => $source) {
-
-            // Hack : Do not display drafts tag (internal)
-            if ($tag == 'drafts') {
-                continue;
-            }
-
             $counter = count($source);
 
             $tagObject = $this->factory->buildTag(
