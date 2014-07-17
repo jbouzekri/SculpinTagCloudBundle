@@ -11,6 +11,7 @@ services:
         arguments:
             - @sculpin_content_types.types.posts.tags_data_provider
             - @jb_sculpin.tag_cloud.factory
+            - %jb_sculpin.tag_cloud.tag_permalink.class%
 
     jb_sculpin.tag_cloud.factory:
         class: %jb_sculpin.tag_cloud.factory.class%

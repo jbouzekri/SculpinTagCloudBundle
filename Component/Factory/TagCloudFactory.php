@@ -12,12 +12,12 @@ class TagCloudFactory
     /**
      * @var string
      */
-    private $tagCloudEntity;
+    protected $tagCloudEntity;
 
     /**
      * @var string
      */
-    private $tagEntity;
+    protected $tagEntity;
 
     /**
      * Constructor

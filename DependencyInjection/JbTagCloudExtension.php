@@ -31,6 +31,7 @@ class JbTagCloudExtension extends Extension
             $manager->addMethodCall('addStrategy', array(new Reference($strategy)));
         }
 
+        $container->setParameter('jb_sculpin.tag_cloud.tag_permalink.class', $config['tag_permalink']);
         $container->setParameter('jb_sculpin.tag_cloud.tag_entity.class', $config['tag_entity']);
         $container->setParameter('jb_sculpin.tag_cloud.tag_cloud_entity.class', $config['tag_cloud_entity']);
     }

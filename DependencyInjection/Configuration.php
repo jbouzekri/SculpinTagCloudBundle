@@ -23,6 +23,9 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
+                ->scalarNode('tag_permalink')
+                    ->defaultValue('/tags/:taxon/index.html')
+                ->end()
                 ->scalarNode('tag_entity')
                     ->defaultValue('Jb\Bundle\TagCloudBundle\Model\Tag')
                 ->end()

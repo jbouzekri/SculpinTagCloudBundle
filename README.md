@@ -58,6 +58,7 @@ Configuration
 
 ``` yml
 jb_tag_cloud:
+    tag_permalink: /tags/:taxon/index.html
     tag_entity: Jb\Bundle\TagCloudBundle\Model\Tag
     tag_cloud_entity: Jb\Bundle\TagCloudBundle\Model\TagCloud
     strategies:
@@ -65,6 +66,7 @@ jb_tag_cloud:
         - jb_sculpin.tag_cloud.strategy.percent_size
 ```
 
+* jb_tag_cloud.tag_permalink : the pattern used for the url in the tag_cloud twig helper
 * jb_tag_cloud.tag_entity : the tag entity
 * jb_tag_cloud.tag_cloud_entity : the tag cloud entity
 * jb_tag_cloud.strategies : A list of services to manipulate the tag cloud. By default, shuffle randomize the order of the tags and percent_size calculate the tag weight based on its number of apparition.

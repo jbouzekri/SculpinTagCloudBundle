@@ -16,27 +16,43 @@ class TagCloudManager
     /**
      * @var \Jb\Bundle\TagCloudBundle\Model\TagCloud
      */
-    private $tagCloud = false;
+    protected $tagCloud = false;
 
     /**
      * @var \Sculpin\Core\DataProvider\DataProviderInterface
      */
-    private $tagDataProvider;
+    protected $tagDataProvider;
 
     /**
      * @var \Jb\Bundle\TagCloudBundle\Component\Factory\TagCloudFactory
      */
-    private $factory;
+    protected $factory;
+
+    /**
+     * @var string
+     */
+    protected $permalinkPattern;
 
     /**
      * @var array
      */
-    private $strategies = array();
+    protected $strategies = array();
 
-    public function __construct(DataProviderInterface $dataProvider, TagCloudFactory $factory)
-    {
+    /**
+     * Constructor
+     *
+     * @param \Sculpin\Core\DataProvider\DataProviderInterface $dataProvider
+     * @param \Jb\Bundle\TagCloudBundle\Component\Factory\TagCloudFactory $factory
+     * @param string $permalinkPattern
+     */
+    public function __construct(
+        DataProviderInterface $dataProvider,
+        TagCloudFactory $factory,
+        $permalinkPattern
+    ) {
         $this->tagDataProvider = $dataProvider;
         $this->factory = $factory;
+        $this->permalinkPattern = $permalinkPattern;
     }
 
     /**
@@ -90,7 +106,7 @@ class TagCloudManager
      *
      * @param \Jb\Bundle\TagCloudBundle\Model\TagCloud $tagCloud
      */
-    private function applyStrategies(\Jb\Bundle\TagCloudBundle\Model\TagCloud $tagCloud)
+    protected function applyStrategies(\Jb\Bundle\TagCloudBundle\Model\TagCloud $tagCloud)
     {
         foreach ($this->strategies as $strategy) {
             $strategy->process($tagCloud);
@@ -104,8 +120,8 @@ class TagCloudManager
      *
      * @return string
      */
-    private function getPermalink($tag)
+    protected function getPermalink($tag)
     {
-        return '/blog/tags/' . rawurlencode($tag).'/index.html';
+        return str_replace(':taxon', $tag, $this->permalinkPattern);;
     }
 }
