@@ -3,6 +3,8 @@ SculpinTagCloudBundle
 
 This bundle generates a tag cloud in sculpin.
 
+You can see a working demo on the right column of my [personal french blog](http://blog.bouzekri.net).
+
 Installation
 ------------
 
