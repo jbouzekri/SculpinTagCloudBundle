@@ -112,7 +112,7 @@ class TagCloud implements \Iterator
      *
      * @return void
      */
-    function rewind()
+    public function rewind()
     {
         $this->position = 0;
     }
@@ -122,7 +122,7 @@ class TagCloud implements \Iterator
      *
      * @return \Jb\Bundle\TagCloudBundle\Model\Tag
      */
-    function current()
+    public function current()
     {
         $keys = array_keys($this->tags);
         return $this->tags[$keys[$this->position]];
@@ -133,7 +133,7 @@ class TagCloud implements \Iterator
      *
      * @return int
      */
-    function key()
+    public function key()
     {
         return $this->position;
     }
@@ -143,7 +143,7 @@ class TagCloud implements \Iterator
      *
      * @return void
      */
-    function next()
+    public function next()
     {
         ++$this->position;
     }
@@ -153,9 +153,24 @@ class TagCloud implements \Iterator
      *
      * @return boolean
      */
-    function valid()
+    public function valid()
     {
         $keys = array_keys($this->tags);
         return isset($keys[$this->position]) && isset($this->tags[$keys[$this->position]]);
+    }
+
+    /**
+     * Slice the tag cloud
+     *
+     * @param int $offset
+     * @param int $length
+     *
+     * @return \Jb\Bundle\TagCloudBundle\Model\TagCloud
+     */
+    public function slice($offset, $length = null)
+    {
+        $this->tags = array_slice($this->tags, $offset, $length, true);
+
+        return $this;
     }
 }

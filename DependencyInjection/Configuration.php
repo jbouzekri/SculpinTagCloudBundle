@@ -32,6 +32,9 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('tag_cloud_entity')
                     ->defaultValue('Jb\Bundle\TagCloudBundle\Model\TagCloud')
                 ->end()
+                ->integerNode('max_number')
+                    ->defaultValue(0)
+                ->end()
                 ->arrayNode('strategies')
                     ->prototype('scalar')->end()
                     ->defaultValue(array(

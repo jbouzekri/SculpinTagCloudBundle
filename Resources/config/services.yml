@@ -3,6 +3,7 @@ parameters:
     jb_sculpin.tag_could_twig_function.class: Jb\Bundle\TagCloudBundle\Component\Renderer\TwigRenderer
     jb_sculpin.tag_cloud.strategy.shuffle.class: Jb\Bundle\TagCloudBundle\Component\Strategy\ShuffleStrategy
     jb_sculpin.tag_cloud.strategy.percent_size.class: Jb\Bundle\TagCloudBundle\Component\Strategy\PercentSizeStrategy
+    jb_sculpin.tag_cloud.strategy.max_number.class: Jb\Bundle\TagCloudBundle\Component\Strategy\MaxNumberStrategy
     jb_sculpin.tag_cloud.factory.class: Jb\Bundle\TagCloudBundle\Component\Factory\TagCloudFactory
 
 services:
@@ -31,3 +32,6 @@ services:
 
     jb_sculpin.tag_cloud.strategy.percent_size:
         class: %jb_sculpin.tag_cloud.strategy.percent_size.class%
+
+    jb_sculpin.tag_cloud.strategy.max_number:
+        class: %jb_sculpin.tag_cloud.strategy.max_number.class%
