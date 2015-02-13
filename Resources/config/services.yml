@@ -35,3 +35,5 @@ services:
 
     jb_sculpin.tag_cloud.strategy.max_number:
         class: %jb_sculpin.tag_cloud.strategy.max_number.class%
+        arguments:
+            - %jb_sculpin.tag_cloud.max_number%
