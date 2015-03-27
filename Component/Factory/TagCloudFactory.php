@@ -48,7 +48,7 @@ class TagCloudFactory
      * @param int $counter
      * @param string $permalink
      *
-     * @return \Jb\Bundle\TagCloudBundle\Model\TagCloud
+     * @return \Jb\Bundle\TagCloudBundle\Model\Tag
      */
     public function buildTag($tag, $counter, $permalink)
     {

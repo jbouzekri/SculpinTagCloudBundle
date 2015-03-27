@@ -1,6 +1,8 @@
 SculpinTagCloudBundle
 =====================
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/b3002a16-5eb1-44ee-bbe4-6d45421a956f/mini.png)](https://insight.sensiolabs.com/projects/b3002a16-5eb1-44ee-bbe4-6d45421a956f)
+
 This bundle generates a tag cloud in sculpin.
 
 You can see a working demo on the right column of my [personal french blog](http://blog.bouzekri.net).

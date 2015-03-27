@@ -70,8 +70,6 @@ class TagCloudManager
 
         $tags = $this->tagDataProvider->provideData();
         foreach ($tags as $tag => $source) {
-            $counter = count($source);
-
             $tagObject = $this->factory->buildTag(
                 $tag,
                 count($source),
