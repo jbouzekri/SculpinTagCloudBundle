@@ -76,6 +76,8 @@ jb_tag_cloud:
 * jb_tag_cloud.tag_cloud_entity : the tag cloud entity
 * jb_tag_cloud.strategies : A list of services to manipulate the tag cloud. By default, shuffle randomize the order of the tags and percent_size calculate the tag weight based on its number of apparition.
 * jb_tag_cloud.max_number : used when enabling the strategy jb_sculpin.tag_cloud.strategy.max_number which will limit the number of tags to display in the cloud (if 0, all tags are displayed). This is global and will be applied to all tag clouds.
+* jb_tag_cloud.alpha: Used to display tags in alphabetical order. Can be combined with percent_size
+
 
 License
 -------
