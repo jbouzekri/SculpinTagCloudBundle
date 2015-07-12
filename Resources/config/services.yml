@@ -4,6 +4,7 @@ parameters:
     jb_sculpin.tag_cloud.strategy.shuffle.class: Jb\Bundle\TagCloudBundle\Component\Strategy\ShuffleStrategy
     jb_sculpin.tag_cloud.strategy.percent_size.class: Jb\Bundle\TagCloudBundle\Component\Strategy\PercentSizeStrategy
     jb_sculpin.tag_cloud.strategy.max_number.class: Jb\Bundle\TagCloudBundle\Component\Strategy\MaxNumberStrategy
+    jb_sculpin.tag_cloud.strategy.alpha.class: Jb\Bundle\TagCloudBundle\Component\Strategy\AlphaStrategy
     jb_sculpin.tag_cloud.factory.class: Jb\Bundle\TagCloudBundle\Component\Factory\TagCloudFactory
 
 services:
@@ -37,3 +38,6 @@ services:
         class: %jb_sculpin.tag_cloud.strategy.max_number.class%
         arguments:
             - %jb_sculpin.tag_cloud.max_number%
+
+    jb_sculpin.tag_cloud.strategy.alpha:
+            class: %jb_sculpin.tag_cloud.strategy.alpha.class%
